@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サイトマップ | NextDoors</title>
+    <meta name="description" content="NextDoorsのサイトマップです。サービス内容、開発プロセス、お問い合わせなどのページへのリンクを掲載しています。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .sitemap {
+            padding: 120px 0 80px;
+        }
+        .sitemap-list {
+            list-style: none;
+            padding: 0;
+        }
+        .sitemap-list li {
+            margin-bottom: 16px;
+        }
+        .sitemap-list a {
+            color: var(--color-main);
+            text-decoration: none;
+            font-size: 18px;
+            transition: var(--transition-base);
+            display: inline-block;
+            padding: 8px 0;
+        }
+        .sitemap-list a:hover {
+            color: var(--color-accent);
+            transform: translateX(8px);
+        }
+        .sitemap-section {
+            margin-bottom: 40px;
+        }
+        .sitemap-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--color-main);
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--color-accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+                <div class="logo" role="banner">
+                    <a href="/">NextDoors</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/#services">サービス</a></li>
+                    <li><a href="/#process">開発プロセス</a></li>
+                    <li><a href="/#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- サイトマップ -->
+    <main class="sitemap" role="main">
+        <div class="container">
+            <h1 class="section-title">サイトマップ</h1>
+            
+            <div class="sitemap-section">
+                <h2>メインページ</h2>
+                <ul class="sitemap-list">
+                    <li><a href="/">トップページ</a></li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section">
+                <h2>サービス</h2>
+                <ul class="sitemap-list">
+                    <li><a href="/#services">業種別課題解決</a>
+                        <ul class="sitemap-list">
+                            <li><a href="/#services">建設業・リフォーム業</a></li>
+                            <li><a href="/#services">士業</a></li>
+                            <li><a href="/#services">小売業</a></li>
+                            <li><a href="/#services">教育・スクールビジネス</a></li>
+                            <li><a href="/#services">美容・サロン業</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section">
+                <h2>開発プロセス</h2>
+                <ul class="sitemap-list">
+                    <li><a href="/#process">開発プロセス詳細</a>
+                        <ul class="sitemap-list">
+                            <li><a href="/#process">ヒアリング</a></li>
+                            <li><a href="/#process">要件定義</a></li>
+                            <li><a href="/#process">設計</a></li>
+                            <li><a href="/#process">開発</a></li>
+                            <li><a href="/#process">テスト</a></li>
+                            <li><a href="/#process">リリース</a></li>
+                            <li><a href="/#process">サポート</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section">
+                <h2>お問い合わせ</h2>
+                <ul class="sitemap-list">
+                    <li><a href="/#contact">お問い合わせフォーム</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; 2024 NextDoors. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

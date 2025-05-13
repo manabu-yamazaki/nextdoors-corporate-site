@@ -1,3 +1,16 @@
+// パフォーマンス最適化
+const debounce = (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+
 // スクロールアニメーション
 document.addEventListener('DOMContentLoaded', () => {
     // Lucide Iconsの初期化
@@ -15,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: '50px'
     });
 
     // 各要素を監視
@@ -23,17 +37,42 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
-    // スムーズスクロール
+    // スムーズスクロール（パフォーマンス最適化）
+    const smoothScroll = (target) => {
+        const element = document.querySelector(target);
+        if (element) {
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    // スクロールイベントの最適化
+    const handleScroll = debounce(() => {
+        const scrollPosition = window.scrollY;
+        const header = document.querySelector('.header');
+        
+        if (scrollPosition > 100) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
+    }, 10);
+
+    // スクロールイベントのリスナー
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // スムーズスクロールのイベントリスナー
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', (e) => {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+            const target = anchor.getAttribute('href');
+            smoothScroll(target);
         });
     });
-}); 
+});

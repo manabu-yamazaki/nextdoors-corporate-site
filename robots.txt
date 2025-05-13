@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# サイトマップの場所
+Sitemap: https://nextdoors.jp/sitemap.xml
+
+# キャッシュディレクトリの除外
+Disallow: /assets/cache/
+Disallow: /assets/temp/
+
+# 管理画面の除外（将来的な拡張用）
+Disallow: /admin/
+Disallow: /wp-admin/ 

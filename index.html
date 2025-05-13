@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextDoors - 中小企業・個人事業者のためのWEBアプリ開発</title>
-    <meta name="description" content="中小企業・個人事業者の業務を、WEBアプリで変革する。業種別の課題に合わせたカスタマイズ可能なWEBアプリ開発サービスを提供しています。">
+    <title>NextDoors - 中小企業・個人事業者のためのWEBアプリ開発 | 業種別カスタマイズ対応</title>
+    <meta name="description" content="中小企業・個人事業者の業務を、WEBアプリで変革する。建設業、士業、小売業、教育業、美容業など、業種別の課題に合わせたカスタマイズ可能なWEBアプリ開発サービスを提供しています。無料相談受付中。">
+    <meta name="keywords" content="WEBアプリ開発,中小企業,個人事業者,業務効率化,業種別ソリューション,建設業,士業,小売業,教育業,美容業">
+    <meta name="author" content="NextDoors">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="NextDoors - 中小企業・個人事業者のためのWEBアプリ開発">
+    <meta property="og:description" content="業種別の課題に合わせたカスタマイズ可能なWEBアプリ開発サービスを提供しています。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nextdoors.jp/">
+    <meta property="og:image" content="https://nextdoors.jp/assets/images/ogp.jpg">
+    <meta property="og:site_name" content="NextDoors">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NextDoors - 中小企業・個人事業者のためのWEBアプリ開発">
+    <meta name="twitter:description" content="業種別の課題に合わせたカスタマイズ可能なWEBアプリ開発サービスを提供しています。">
+    <meta name="twitter:image" content="https://nextdoors.jp/assets/images/ogp.jpg">
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NextDoors",
+        "description": "中小企業・個人事業者のためのWEBアプリ開発サービス",
+        "url": "https://nextdoors.jp",
+        "logo": "https://nextdoors.jp/assets/images/logo.png",
+        "sameAs": [
+            "https://twitter.com/nextdoors",
+            "https://www.facebook.com/nextdoors"
+        ]
+    }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,26 +47,41 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
+    <!-- プリロード -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@600;700&display=swap" as="style">
+    
+    <!-- DNSプリフェッチ -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    
+    <!-- リソースヒント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <!-- ヘッダー -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
-            <nav class="nav">
-                <div class="logo">NextDoors</div>
+            <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+                <div class="logo" role="banner">NextDoors</div>
                 <ul class="nav-links">
-                    <li><a href="#services">サービス</a></li>
-                    <li><a href="#process">開発プロセス</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
+                    <li><a href="#services" aria-label="サービスセクションへ">サービス</a></li>
+                    <li><a href="#process" aria-label="開発プロセスセクションへ">開発プロセス</a></li>
+                    <li><a href="#contact" aria-label="お問い合わせセクションへ">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- ヒーローセクション -->
-    <section class="hero">
+    <section class="hero" role="banner">
         <div class="container">
             <h1 class="hero-title">あなたのビジネスを、<br>デジタルで進化させる</h1>
             <p class="hero-subtitle">業種別の課題に合わせた、カスタマイズ可能なWEBアプリ開発</p>
@@ -42,9 +90,9 @@
     </section>
 
     <!-- サービスセクション -->
-    <section id="services" class="services">
+    <section id="services" class="services" role="region" aria-labelledby="services-title">
         <div class="container">
-            <h2 class="section-title">業種別課題解決</h2>
+            <h2 id="services-title" class="section-title">業種別課題解決</h2>
             
             <!-- 建設業・リフォーム業 -->
             <div class="service-card">
@@ -174,9 +222,9 @@
     </section>
 
     <!-- 開発プロセスセクション -->
-    <section id="process" class="process">
+    <section id="process" class="process" role="region" aria-labelledby="process-title">
         <div class="container">
-            <h2 class="section-title">開発プロセス</h2>
+            <h2 id="process-title" class="section-title">開発プロセス</h2>
             <p class="section-description">お客様のビジネス課題を解決するために、<br>丁寧なヒアリングから運用サポートまで、<br>一貫したサービスを提供いたします。</p>
             <div class="process-timeline">
                 <div class="process-step">
@@ -281,10 +329,10 @@
     </section>
 
     <!-- お問い合わせセクション -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" role="region" aria-labelledby="contact-title">
         <div class="container">
-            <h2 class="section-title">お問い合わせ</h2>
-            <form class="contact-form" action="https://formspree.io/f/mqaqgeay" method="POST">
+            <h2 id="contact-title" class="section-title">お問い合わせ</h2>
+            <form class="contact-form" action="https://formspree.io/f/mqaqgeay" method="POST" role="form" aria-labelledby="contact-form-title">
                 <div class="form-group">
                     <label for="name">お名前 <span class="required">*</span></label>
                     <input type="text" id="name" name="name" required>
@@ -321,13 +369,37 @@
     </section>
 
     <!-- フッター -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>&copy; 2024 NextDoors. All rights reserved.</p>
+            <p>&copy; 2025 NextDoors. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- 画像の遅延読み込み -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            if ('loading' in HTMLImageElement.prototype) {
+                lazyImages.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            } else {
+                // 遅延読み込みのフォールバック
+                const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                lazyImages.forEach(image => lazyImageObserver.observe(image));
+            }
+        });
+    </script>
+    
     <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html> 

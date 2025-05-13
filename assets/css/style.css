@@ -1,11 +1,4 @@
-/* リセットCSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ベーススタイル */
+/* クリティカルCSS */
 :root {
     --color-main: #34495E;
     --color-accent: #1ABC9C;
@@ -15,6 +8,65 @@
     --color-text: #2C3E50;
     --color-border: #BDC3C7;
     --transition-base: all 0.5s ease;
+}
+
+/* アニメーションの最適化 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* パフォーマンス最適化 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* コンテンツの最適化 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* レンダリングの最適化 */
+.service-card,
+.process-step,
+.contact-form {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* アニメーションの最適化 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1.0s ease-out forwards;
+    will-change: opacity, transform;
+}
+
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -587,21 +639,5 @@ body {
 
     .section-title {
         font-size: 28px;
-    }
-}
-
-/* アニメーション用のクラス */
-.fade-in {
-    animation: fadeIn 1.0s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 } 
