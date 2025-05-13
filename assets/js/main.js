@@ -36,38 +36,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // フォーム送信処理
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // フォームデータの取得
-            const formData = new FormData(contactForm);
-            const formDataObj = {};
-            formData.forEach((value, key) => {
-                formDataObj[key] = value;
-            });
-
-            try {
-                // ここにフォーム送信の処理を追加
-                // 例: await fetch('/api/contact', {
-                //     method: 'POST',
-                //     headers: {
-                //         'Content-Type': 'application/json',
-                //     },
-                //     body: JSON.stringify(formDataObj)
-                // });
-
-                // 送信成功時の処理
-                alert('お問い合わせありがとうございます。\n内容を確認次第、ご連絡させていただきます。');
-                contactForm.reset();
-            } catch (error) {
-                // エラー処理
-                alert('申し訳ありません。送信に失敗しました。\n時間をおいて再度お試しください。');
-                console.error('Error:', error);
-            }
-        });
-    }
 }); 
