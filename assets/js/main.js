@@ -1,5 +1,8 @@
 // スクロールアニメーション
 document.addEventListener('DOMContentLoaded', () => {
+    // Lucide Iconsの初期化
+    lucide.createIcons();
+
     // スクロールアニメーション用の要素を取得
     const animatedElements = document.querySelectorAll('.service-card, .process-step');
 

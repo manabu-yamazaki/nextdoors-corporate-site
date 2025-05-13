@@ -14,6 +14,7 @@
     --color-cta-hover: #F39C12;
     --color-text: #2C3E50;
     --color-border: #BDC3C7;
+    --transition-base: all 0.5s ease;
 }
 
 body {
@@ -62,11 +63,23 @@ body {
     text-decoration: none;
     color: var(--color-text);
     font-weight: 500;
-    transition: color 0.3s;
+    transition: var(--transition-base);
+    position: relative;
 }
 
-.nav-links a:hover {
-    color: var(--color-accent);
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: var(--transition-base);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* ヒーローセクション */
@@ -101,16 +114,51 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: var(--transition-base);
 }
 
 .cta-button:hover {
     background-color: var(--color-cta-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.2);
+}
+
+.cta-button:hover::before {
+    left: 100%;
 }
 
 /* サービスセクション */
 .services {
     padding: 80px 0;
+}
+
+.service-icon {
+    margin-bottom: 24px;
+}
+
+.service-icon svg {
+    width: 48px;
+    height: 48px;
+    color: var(--color-accent);
+    transition: var(--transition-base);
 }
 
 .section-title {
@@ -128,6 +176,31 @@ body {
     padding: 32px;
     margin-bottom: 32px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition-base);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
 }
 
 .service-card h3 {
@@ -174,9 +247,17 @@ body {
     padding: 80px 0;
 }
 
+.section-description {
+    text-align: center;
+    font-size: 18px;
+    color: var(--color-text);
+    margin-bottom: 48px;
+    line-height: 1.8;
+}
+
 .process-timeline {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
     margin-top: 48px;
 }
@@ -187,6 +268,32 @@ body {
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.process-step::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: var(--transition-base);
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.process-step:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .step-number {
@@ -200,6 +307,58 @@ body {
     justify-content: center;
     margin: 0 auto 16px;
     font-weight: 700;
+}
+
+.step-icon {
+    margin-bottom: 16px;
+}
+
+.step-icon svg {
+    width: 32px;
+    height: 32px;
+    color: var(--color-accent);
+    transition: var(--transition-base);
+}
+
+.process-step h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--color-main);
+    margin-bottom: 12px;
+}
+
+.process-step p {
+    color: var(--color-text);
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.step-details {
+    list-style: none;
+    text-align: left;
+    padding: 0 16px;
+}
+
+.step-details li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+.step-details li::before {
+    content: "✓";
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.process-step:hover .step-icon svg {
+    transform: scale(1.2) rotate(15deg);
+    color: var(--color-accent);
 }
 
 /* お問い合わせセクション */
@@ -231,11 +390,14 @@ body {
     border-radius: 6px;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
+    transition: var(--transition-base);
 }
 
-.form-group textarea {
-    height: 160px;
-    resize: vertical;
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.1);
 }
 
 .submit-button {
@@ -248,12 +410,36 @@ body {
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: var(--transition-base);
     width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: var(--transition-base);
 }
 
 .submit-button:hover {
     background-color: var(--color-cta-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.2);
+}
+
+.submit-button:hover::before {
+    left: 100%;
 }
 
 /* フッター */
@@ -281,6 +467,15 @@ body {
     .nav-links {
         display: none;
     }
+
+    .process-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .section-description {
+        font-size: 16px;
+        padding: 0 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -294,5 +489,21 @@ body {
 
     .section-title {
         font-size: 28px;
+    }
+}
+
+/* アニメーション用のクラス */
+.fade-in {
+    animation: fadeIn 1.0s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 } 

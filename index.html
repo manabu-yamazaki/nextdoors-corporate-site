@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -68,7 +71,105 @@
                 </div>
             </div>
 
-            <!-- 他の業種カードも同様に追加 -->
+            <!-- 士業 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="icon-legal"></i>
+                </div>
+                <h3>士業（税理士、社労士、行政書士など）</h3>
+                <div class="service-content">
+                    <div class="challenge">
+                        <h4>課題</h4>
+                        <ul>
+                            <li>顧客とのやり取りがメールや電話中心で煩雑</li>
+                            <li>書類の提出や進捗の見える化ができていない</li>
+                            <li>案件管理の非効率性</li>
+                        </ul>
+                    </div>
+                    <div class="solution">
+                        <h4>ソリューション</h4>
+                        <ul>
+                            <li>クライアント専用ポータルサイト</li>
+                            <li>案件管理・進捗共有ツール</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 小売業 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="icon-retail"></i>
+                </div>
+                <h3>小売業（実店舗 + EC）</h3>
+                <div class="service-content">
+                    <div class="challenge">
+                        <h4>課題</h4>
+                        <ul>
+                            <li>在庫管理が煩雑</li>
+                            <li>顧客管理ができていない</li>
+                            <li>オンライン・オフラインの連携不足</li>
+                        </ul>
+                    </div>
+                    <div class="solution">
+                        <h4>ソリューション</h4>
+                        <ul>
+                            <li>E在庫・顧客管理アプリ</li>
+                            <li>会員管理・ポイントシステムの構築</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 教育・スクールビジネス -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="icon-education"></i>
+                </div>
+                <h3>教育・スクールビジネス</h3>
+                <div class="service-content">
+                    <div class="challenge">
+                        <h4>課題</h4>
+                        <ul>
+                            <li>生徒の出席管理・連絡帳がアナログ</li>
+                            <li>保護者との連絡が煩雑</li>
+                            <li>成績管理の非効率性</li>
+                        </ul>
+                    </div>
+                    <div class="solution">
+                        <h4>ソリューション</h4>
+                        <ul>
+                            <li>出席・成績管理アプリ</li>
+                            <li>保護者向けの連絡ポータル</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 美容・サロン業 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="icon-beauty"></i>
+                </div>
+                <h3>美容・サロン業</h3>
+                <div class="service-content">
+                    <div class="challenge">
+                        <h4>課題</h4>
+                        <ul>
+                            <li>予約管理が煩雑（電話予約や複数ツール利用）</li>
+                            <li>顧客カルテ管理が紙</li>
+                            <li>顧客とのコミュニケーション不足</li>
+                        </ul>
+                    </div>
+                    <div class="solution">
+                        <h4>ソリューション</h4>
+                        <ul>
+                            <li>予約＆顧客カルテ一体型システム</li>
+                            <li>LINE連携型リマインダー機能</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -76,13 +177,105 @@
     <section id="process" class="process">
         <div class="container">
             <h2 class="section-title">開発プロセス</h2>
+            <p class="section-description">お客様のビジネス課題を解決するために、<br>丁寧なヒアリングから運用サポートまで、<br>一貫したサービスを提供いたします。</p>
             <div class="process-timeline">
                 <div class="process-step">
                     <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i data-lucide="message-square"></i>
+                    </div>
                     <h3>ヒアリング</h3>
                     <p>現状の課題と目標を詳しくお伺いします</p>
+                    <ul class="step-details">
+                        <li>業務フローの確認</li>
+                        <li>課題の洗い出し</li>
+                        <li>目標設定</li>
+                    </ul>
                 </div>
-                <!-- 他のステップも同様に追加 -->
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i data-lucide="file-text"></i>
+                    </div>
+                    <h3>要件定義</h3>
+                    <p>必要な機能と実装方法を明確にします</p>
+                    <ul class="step-details">
+                        <li>機能要件の整理</li>
+                        <li>画面設計</li>
+                        <li>開発スケジュールの策定</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i data-lucide="layout"></i>
+                    </div>
+                    <h3>設計</h3>
+                    <p>システムの全体像を設計します</p>
+                    <ul class="step-details">
+                        <li>システム構成の設計</li>
+                        <li>データベース設計</li>
+                        <li>API設計</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i data-lucide="code"></i>
+                    </div>
+                    <h3>開発</h3>
+                    <p>設計に基づいて実装を進めます</p>
+                    <ul class="step-details">
+                        <li>フロントエンド開発</li>
+                        <li>バックエンド開発</li>
+                        <li>データベース実装</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-icon">
+                        <i data-lucide="check-circle"></i>
+                    </div>
+                    <h3>テスト</h3>
+                    <p>品質を確認し、問題点を修正します</p>
+                    <ul class="step-details">
+                        <li>単体テスト</li>
+                        <li>結合テスト</li>
+                        <li>ユーザビリティテスト</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="step-icon">
+                        <i data-lucide="rocket"></i>
+                    </div>
+                    <h3>リリース</h3>
+                    <p>システムを本番環境に移行します</p>
+                    <ul class="step-details">
+                        <li>本番環境の構築</li>
+                        <li>データ移行</li>
+                        <li>動作確認</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">7</div>
+                    <div class="step-icon">
+                        <i data-lucide="headphones"></i>
+                    </div>
+                    <h3>サポート</h3>
+                    <p>運用開始後も継続的なサポートを提供</p>
+                    <ul class="step-details">
+                        <li>運用サポート</li>
+                        <li>機能改善</li>
+                        <li>バグ修正</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
