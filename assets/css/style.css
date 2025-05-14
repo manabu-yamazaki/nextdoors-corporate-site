@@ -21,6 +21,11 @@
     }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 /* パフォーマンス最適化 */
 * {
     margin: 0;
@@ -203,7 +208,7 @@ body {
     padding: 60px 0;
 }
 
-.services .container {
+.services .container.services-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
@@ -593,17 +598,13 @@ body {
 
 /* レスポンシブデザイン */
 @media (max-width: 1024px) {
-    .services .container {
+    .services .container.services-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-  h1, h2, h3, h4, h5, h6 {
-      text-align: center;
-  }
-
-    .services .container {
+    .services .container.services-container {
         grid-template-columns: 1fr;
     }
 
@@ -643,10 +644,6 @@ body {
 }
 
 @media (max-width: 480px) {
-    h1, h2, h3, h4, h5, h6 {
-        text-align: center;
-    }
-
     .container {
         padding: 0 16px;
     }
@@ -941,10 +938,6 @@ body {
 }
 
 /* 開発プロセス：フローチャート */
-.process-flowchart {
-    padding: 48px 0 0 0;
-}
-
 .process-flow {
     display: flex;
     flex-direction: column;
@@ -957,7 +950,7 @@ body {
 .process-step {
     margin: 0 0 16px 0;
     min-width: 0;
-    max-width: 100%;
+    max-width: 700px;
     width: 100%;
     box-sizing: border-box;
 }
