@@ -7,6 +7,7 @@
     --color-cta-hover: #F39C12;
     --color-text: #2C3E50;
     --color-border: #BDC3C7;
+    --color-white: #FFFFFF;
     --transition-base: all 0.5s ease;
 }
 
@@ -936,5 +937,173 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* 開発プロセス：フローチャート */
+.process-flowchart {
+    padding: 48px 0 0 0;
+}
+
+.process-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    justify-content: flex-start;
+    overflow-x: visible;
+}
+
+.process-step {
+    margin: 0 0 16px 0;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.process-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 100%;
+    margin: 0 0 16px 0;
+    position: relative;
+}
+
+.process-arrow span {
+    font-size: 2rem;
+    color: var(--color-accent);
+    user-select: none;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 1;
+}
+
+.process-step {
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    padding: 32px 24px 24px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+}
+
+.process-step:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(26, 188, 156, 0.13);
+}
+
+.step-circle {
+    width: 48px;
+    height: 48px;
+    background: var(--color-accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(26, 188, 156, 0.12);
+}
+
+.step-icon {
+    margin-bottom: 12px;
+}
+
+.step-icon i, .step-icon svg {
+    width: 32px;
+    height: 32px;
+    color: var(--color-accent);
+}
+
+.process-step h3 {
+    font-size: 1.1rem;
+    color: var(--color-main);
+    margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.process-step p {
+    font-size: 0.98rem;
+    color: var(--color-text);
+    margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+    .process-flow {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+    .process-step {
+        min-width: 160px;
+        padding: 24px 12px 16px 12px;
+        margin: 0 4px;
+    }
+    .process-arrow span {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .process-flow {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+    .process-step {
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .process-arrow {
+        height: 48px;
+        margin: 0 0 4px 0;
+    }
+    .process-arrow span {
+        font-size: 2.0rem;
+        line-height: 1;
+    }
+}
+
+.process-step-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+    min-width: 200px;
+}
+.process-step-header .step-circle {
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+.process-step-header .step-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+.process-step-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--color-main);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+}
+@media (max-width: 480px) {
+    .process-step-header {
+        gap: 8px;
+    }
+    .process-step-header h3 {
+        font-size: 1rem;
     }
 } 
