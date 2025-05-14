@@ -772,18 +772,12 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: var(--color-white);
 }
 
 .profile-image img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease;
-}
-
-.profile-image:hover img {
-    transform: scale(1.05);
 }
 
 .profile-info {
@@ -797,12 +791,6 @@ body {
     padding: 24px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 .info-card h3 {
