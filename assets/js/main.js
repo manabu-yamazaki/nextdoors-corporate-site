@@ -76,3 +76,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// FAQアコーディオン
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+            
+            // 現在の質問の状態を切り替え
+            question.setAttribute('aria-expanded', !isExpanded);
+            answer.classList.toggle('active');
+            
+            // 他の質問を閉じる
+            faqQuestions.forEach(otherQuestion => {
+                if (otherQuestion !== question) {
+                    otherQuestion.setAttribute('aria-expanded', 'false');
+                    otherQuestion.nextElementSibling.classList.remove('active');
+                }
+            });
+        });
+    });
+});
