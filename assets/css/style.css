@@ -89,12 +89,32 @@ body {
 
 /* ヘッダー */
 .header {
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     position: fixed;
-    width: 100%;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px) saturate(180%);
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10), 0 1.5px 0 rgba(26, 188, 156, 0.08);
+    border-bottom: 1px solid rgba(200, 200, 200, 0.18);
+    transition: background 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.4s;
+}
+
+.header-scrolled {
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.13), 0 2px 0 rgba(26, 188, 156, 0.10);
+    border-bottom: 1.5px solid rgba(26, 188, 156, 0.13);
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--color-main);
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 8px rgba(26, 188, 156, 0.08);
+    transition: color 0.3s;
 }
 
 .nav {
@@ -104,25 +124,21 @@ body {
     height: 80px;
 }
 
-.logo {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    color: var(--color-main);
-}
-
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 32px;
+    gap: 36px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--color-text);
+    color: var(--color-main);
     font-weight: 500;
-    transition: var(--transition-base);
+    font-size: 1.08rem;
+    padding: 8px 0;
     position: relative;
+    transition: color 0.3s, letter-spacing 0.3s;
+    letter-spacing: 0.5px;
 }
 
 .nav-links a::after {
@@ -131,9 +147,15 @@ body {
     bottom: -4px;
     left: 0;
     width: 0;
-    height: 2px;
-    background-color: var(--color-accent);
-    transition: var(--transition-base);
+    height: 2.5px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-cta));
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(.4,2,.6,1);
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+    letter-spacing: 1.5px;
 }
 
 .nav-links a:hover::after {
@@ -313,8 +335,28 @@ body {
 
 /* 開発プロセスセクション */
 .process {
+    position: relative;
+    background: url('../images/process_background.jpg') center/cover no-repeat;
     background-color: var(--color-background);
     padding: 80px 0;
+    z-index: 0;
+}
+
+.process::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.35);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.section-title, .section-description, .process-flowchart, .process-flow, .process-step, .process-arrow {
+    position: relative;
+    z-index: 2;
 }
 
 .section-description {
@@ -663,6 +705,19 @@ body {
         font-size: 16px;
         padding: 0 20px;
     }
+
+    .header {
+        padding: 0 8px;
+    }
+    .nav {
+        height: 64px;
+    }
+    .logo {
+        font-size: 20px;
+    }
+    .nav-links {
+        gap: 18px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -681,8 +736,28 @@ body {
 
 /* 会社情報/プロフィールセクション */
 .profile {
+    position: relative;
+    background: url('../images/profile_background.jpg') center/cover no-repeat;
     padding: 80px 0;
     background-color: var(--color-background);
+    z-index: 0;
+}
+
+.profile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.35);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.profile-title, .profile-image, .profile-info {
+    position: relative;
+    z-index: 2;
 }
 
 .profile-content {
